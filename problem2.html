@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EECS 348 Lab Seven Practice Two</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    label, input {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>EECS 348 Lab Seven Practice Two</h1>
+  <p id="paragraph" style="border: 1px solid black; padding: 10px;">This is the paragraph that is altered.</p>
+  <label for="borderR">Border R(0-255):</label>
+  <input type="number" id="borderR" min="0" max="255">
+  <label for="borderG">Border G(0-255):</label>
+  <input type="number" id="borderG" min="0" max="255">
+  <label for="borderB">Border B(0-255):</label>
+  <input type="number" id="borderB" min="0" max="255">
+  <label for="borderWidth">Border Width:</label>
+  <input type="number" id="borderWidth" min="0">
+  <label for="backgroundR">Background R(0-255):</label>
+  <input type="number" id="backgroundR" min="0" max="255">
+  <label for="backgroundG">Background G(0-255):</label>
+  <input type="number" id="backgroundG" min="0" max="255">
+  <label for="backgroundB">Background B(0-255):</label>
+  <input type="number" id="backgroundB" min="0" max="255">
+  <button onclick="changeColor()">Change the color!</button>
+
+  <script>
+    function changeColor() {
+      const borderR = document.getElementById("borderR").value;
+      const borderG = document.getElementById("borderG").value;
+      const borderB = document.getElementById("borderB").value;
+      const borderWidth = document.getElementById("borderWidth").value;
+      const backgroundR = document.getElementById("backgroundR").value;
+      const backgroundG = document.getElementById("backgroundG").value;
+      const backgroundB = document.getElementById("backgroundB").value;
+
+      const paragraph = document.getElementById("paragraph");
+
+      paragraph.style.borderColor = `rgb(${borderR}, ${borderG}, ${borderB})`;
+      paragraph.style.borderWidth = `${borderWidth}px`;
+      paragraph.style.backgroundColor = `rgb(${backgroundR}, ${backgroundG}, ${backgroundB})`;
+    }
+  </script>
+</body>
+</html>
